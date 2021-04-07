@@ -5,10 +5,11 @@
 
 
 #### Menu bar : </br>
-used menu_drawer inside menu that has list of functinalities i want in my app
-when we click on them it will not move to new activity rather it will move to new fragment (part as name suggest :> ) because like whatsapp we have chat , status , calls options but when we slide them the toolbar remain same as it will not create new activity. </br>
+used menu_drawer inside menu that has list of functinalities i want in my app.When we click on them it will not move to new activity rather it will move to new fragment (part as name suggest :> ) because like whatsapp we have chat , status and calls options but when we slide them , the toolbar remain same as it will not create new activity. </br>
 
 so for each item ( Dashboard , Favourites , Profile , About App ) i have to create fragments and they will also have their own xml files for thier UI  </br>
+
+To know currently which fragment is opened we have diff title of toolbar (Actually action bar) as current fragment name and also make the item checked using ischecked = true </br>
 
 move from Fragment 1 -> Fragment 3 -> Fragement 2 ------ we need backpressed function to move Fragment 3 -> Fragment 1 when back button from Fragment 2 is clicked rather than exiting the app but here i have alter the default function of backpressed and make Dashboard Fragment open when back button is pressed.
 
