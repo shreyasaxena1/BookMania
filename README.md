@@ -1,9 +1,21 @@
-### UNDER CONSTRUCTION
+## UNDER CONSTRUCTION
 
 
-#### Personal Notes 
+### Personal Notes 
 
-For Dashboard Fragment :: Set as Default Fragment
+
+#### Menu bar : </br>
+used menu_drawer inside menu that has list of functinalities i want in my app
+when we click on them it will not move to new activity rather it will move to new fragment (part as name suggest :> ) because like whatsapp we have chat , status , calls options but when we slide them the toolbar remain same as it will not create new activity. </br>
+
+so for each item ( Dashboard , Favourites , Profile , About App ) i have to create fragments and they will also have their own xml files for thier UI  </br>
+
+move from Fragment 1 -> Fragment 3 -> Fragement 2 ------ we need backpressed function to move Fragment 3 -> Fragment 1 when back button from Fragment 2 is clicked rather than exiting the app but here i have alter the default function of backpressed and make Dashboard Fragment open when back button is pressed.
+
+
+
+
+#### For Dashboard Fragment :: Set as Default Fragment
 
 It has list of books for which i have used RecyclerView ( Preferred over ListView ) </br>
    Component of Recycler View </br>
@@ -11,7 +23,7 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    -> ViewHolder : View--single for all the list items as each list item has same view and also list items are dynamic size so we cannot predefine its number </br>
    -> Adapter : Binds view with data </br>
    
-   Dashboard Fragment file and recycler_dashboard_simgle_row file
+   Dashboard Fragment file and recycler_dashboard_simgle_row file for UI
    (Too confusing rn)
     -- can refer comments in the code for more information
     
