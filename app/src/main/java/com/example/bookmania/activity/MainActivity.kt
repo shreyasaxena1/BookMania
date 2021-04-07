@@ -1,20 +1,22 @@
-package com.example.bookmania
+package com.example.bookmania.activity
 
 
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.FrameLayout
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat
+import com.example.bookmania.*
+import com.example.bookmania.fragment.AboutAppFragment
+import com.example.bookmania.fragment.DashboardFragment
+import com.example.bookmania.fragment.FavouritesFragment
+import com.example.bookmania.fragment.ProfileFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +25,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var toolbar: Toolbar
     lateinit var frameLayout: FrameLayout
     lateinit var navigationView: NavigationView
-
+   // prevoiusly checked menu item
+    var previousMenuItem:MenuItem? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,15 @@ class MainActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationView)
         setUpToolbar()
         //toolbar - anywhere , actionbar - top of screen
+
+        //open dashboard as initial activity
+        //supportFragmentManager.beginTransaction()
+        //  .replace(R.id.frame , DashboardFragment())
+        //.addToBackStack("Dashboard")
+        //.commit()
+        // supportActionBar?.title = "Dashboard"
+        // replace code with dashboard method to make code clear
+        openDashboard()
 
         //which act toggle placed
         val actionBarDrawerToggle = ActionBarDrawerToggle(
@@ -48,13 +60,24 @@ class MainActivity : AppCompatActivity() {
         // change hamburger icon to back icon and vice versa
 
         navigationView.setNavigationItemSelectedListener {
+
+            if(previousMenuItem!=null){  //if some menu item is checked previously
+               previousMenuItem?.isChecked = false //unchecked
+           }
+           it.isCheckable = true //check current menu item
+            it.isChecked = true
+            previousMenuItem = it //make current to prev
+
             //using it get currently selected item
             when (it.itemId) {
                 R.id.dashboard -> {
                     //open when dashboard is tapped
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.frame, DashboardFragment()) //dashboard fragment replacing blank frame
-                        .addToBackStack("Dashboard")  //add fragment to backstack to ostire transactions
+                        .replace(
+                            R.id.frame,
+                            DashboardFragment()
+                        ) //dashboard fragment replacing blank frame
+                       // .addToBackStack("Dashboard")  //add fragment to backstack to ostire transactions
                         .commit()
                     supportActionBar?.title = "Dashboard" //chnge toolbar title with fragment
                     //close drawer when transaction commited
@@ -64,16 +87,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.favourites -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, FavouritesFragment())
-                        .addToBackStack("Favourites")
                         .commit()
-                    supportActionBar?.title="Favourites"
+                    supportActionBar?.title = "Favourites"
                     drawerLayout.closeDrawers()
                 }
 
                 R.id.profile -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, ProfileFragment())
-                        .addToBackStack("Profile")
                         .commit()
                     supportActionBar?.title = "Profile"
                     drawerLayout.closeDrawers()
@@ -82,7 +103,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.aboutApp -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame, AboutAppFragment())
-                        .addToBackStack("About App ")
                         .commit()
                     supportActionBar?.title = "About App"
                     drawerLayout.closeDrawers()
@@ -114,5 +134,29 @@ class MainActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+//opening dashboard
+    fun openDashboard() {
+        val fragment = DashboardFragment()
+        val transaction = supportFragmentManager.beginTransaction()
+
+        transaction.replace(R.id.frame, fragment)
+        transaction.commit()
+        supportActionBar?.title = "Dashboard"
+    //checked : when app initially open
+       navigationView.setCheckedItem(R.id.dashboard)
+        
+    }
+
+    override fun onBackPressed(){
+        //holds fragment currently displayed
+        val frag = supportFragmentManager.findFragmentById(R.id.frame)
+
+       //frame not dashboard then open dashboard
+        when(frag){
+           !is DashboardFragment -> openDashboard()
+
+            else -> super.onBackPressed()
+        }
     }
 }
