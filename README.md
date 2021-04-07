@@ -5,7 +5,7 @@
 
 
 #### Menu bar : </br>
-used menu_drawer inside menu that has list of functinalities i want in my app.When we click on them it will not move to new activity rather it will move to new fragment (part as name suggest :> ) because like whatsapp we have chat , status and calls options but when we slide them , the toolbar remain same as it will not create new activity. </br>
+Used menu_drawer inside menu that has list of functionalities i want in my app.When we click on them it will not move to new activity rather it will move to new fragment (part as name suggest :> ) because like whatsapp we have chat , status and calls options but when we slide them , the toolbar remain same as it will not create new activity. </br>
 
 so for each item ( Dashboard , Favourites , Profile , About App ) i have to create fragments and they will also have their own xml files for thier UI  </br>
 
