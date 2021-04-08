@@ -31,7 +31,8 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    
     
    #### Internet Permission
-   App but does not ask explicitly for internet permission fromuser but it ask from the device
+   App does not ask explicitly for internet permission fromuser but it ask from the device. </br>
+   Manifest File
     
     Updated at 08-04-2021
    
