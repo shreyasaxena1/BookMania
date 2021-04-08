@@ -26,8 +26,13 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    
    Dashboard Fragment file and recycler_dashboard_simgle_row file for UI
    (Too confusing rn)
-    -- can refer comments in the code for more information
+   
+   Divided the list item using addItemDecoration
+   
     
+   #### Internet Permission
+   App does not ask explicitly for internet permission fromuser but it ask from the device. </br>
+   Manifest File
     
-    Updated at 07-04-2021
+    Updated at 08-04-2021
    
