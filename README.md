@@ -35,8 +35,10 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    Manifest File
    
    Whether device connected to internet or not </br>
-   package - Util : Class Manager
-
+   package - Util : Class Manager </br>
+   
+   Network Request - GET(Retrieve) and Post(SEND)</br>
+   Send request --> Volley , Retrofit ,OkHTTP (Libraries) and HttpURLConnection (Default method)
     
     Updated at 08-04-2021
    
