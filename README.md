@@ -53,6 +53,10 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
   Using http not https (secured version of http) so we need to add extra peice of code</br>
   Directory xml -> network_security_config.xml </br>
   
+  
+  #### Picasso
+  for obtaining img from link we have used Picasso
+  
     
     Updated at 11-04-2021
    
