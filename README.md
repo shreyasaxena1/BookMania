@@ -50,11 +50,9 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
   Header -  tell type of content being sent and recieve
             , helps to send a unique token with rqt
    
-      
- 
-
-   
-   
+  Using http not https (secured version of http) so we need to add extra peice of code</br>
+  Directory xml -> network_security_config.xml </br>
+  
     
     Updated at 11-04-2021
    
