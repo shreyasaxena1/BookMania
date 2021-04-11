@@ -38,7 +38,8 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    package - Util : Class Manager </br>
    
    Network Request - GET(Retrieve) and Post(SEND)</br>
-   Send request --> Volley , Retrofit ,OkHTTP (Libraries) and HttpURLConnection (Default method)
+   Send request --> Volley , Retrofit ,OkHTTP (Libraries) and HttpURLConnection (Default method)</br>
+   Volley -> send Request and response in JSON
     
-    Updated at 08-04-2021
+    Updated at 11-04-2021
    
