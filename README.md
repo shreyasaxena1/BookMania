@@ -24,6 +24,9 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    -> ViewHolder : View--single for all the list items as each list item has same view and also list items are dynamic size so we cannot predefine its number </br>
    -> Adapter : Binds view with data </br>
    
+   using http not https (secured http) so we need to add a peice of code extra</br>
+   directory xml -> network_security_config.xml </br>
+   
    Dashboard Fragment file and recycler_dashboard_simgle_row file for UI
    (Too confusing rn)
    
@@ -39,7 +42,19 @@ It has list of books for which i have used RecyclerView ( Preferred over ListVie
    
    Network Request - GET(Retrieve) and Post(SEND)</br>
    Send request --> Volley , Retrofit ,OkHTTP (Libraries) and HttpURLConnection (Default method)</br>
-   Volley -> send Request and response in JSON
+   Volley -> send Request and response in JSON </br>
+   Server -> API -> DB -> API -> Server </br>
+   Andriod APP ------> Main Thread : Res. for processes visible to users 
+               ------> Workers Thread : Res. for bg processes </br>
+            
+  Header -  tell type of content being sent and recieve
+            , helps to send a unique token with rqt
+   
+      
+ 
+
+   
+   
     
     Updated at 11-04-2021
    
